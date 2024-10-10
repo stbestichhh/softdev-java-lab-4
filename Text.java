@@ -5,7 +5,7 @@ import java.util.List;
  * Represents a text as a list of sentences
  */
 public class Text {
-  public final List<Sentences> sentences;
+  public final List<Sentence> sentences;
 
   public Text(String text) {
     sentences = new ArrayList<>();

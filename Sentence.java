@@ -19,7 +19,7 @@ public class Sentence {
     }
   }
 
-  public sortWordsByLetterUccurrances(char targetLetter) {
+  public void sortWordsByLetterUccurrances(char targetLetter) {
     components.sort((obj1, obj2) -> {
       if (obj1 instanceof Word && obj2 instanceof Word) {
         Word word1 = (Word) obj1;

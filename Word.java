@@ -18,7 +18,7 @@ public class Word {
   public int countLetterOccurrances(char targetLetter) {
     int count = 0;
     for (Letter letter : letters) {
-      if (letter.var == targetLetter) {
+      if (letter.value == targetLetter) {
         count++;
       }
     }
