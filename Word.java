@@ -25,4 +25,13 @@ public class Word {
 
     return count;
   }
+
+  @Override
+  public String toString() {
+    String word = "";
+    for (Letter letter : letters) {
+      word += letter.value;
+    }
+    return word;
+  }
 }

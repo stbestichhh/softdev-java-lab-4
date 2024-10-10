@@ -23,4 +23,14 @@ public class Text {
       sentence.sortWordsByLetterUccurrances(targetLetter);
     }
   }
+
+  @Override
+  public String toString() {
+    String text = "";
+    for (Sentence sentence : sentences) {
+      text += sentence.toString() + " ";
+    }
+
+    return text.trim();
+  }
 }

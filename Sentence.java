@@ -30,4 +30,14 @@ public class Sentence {
       return 0;
     });
   }
+
+  @Override
+  public String toString() {
+    String sentence = "";
+    for (Object component : components) {
+      sentence += component.toString() + " ";
+    }
+
+    return sentence.trim().replaceAll("\\s+", " ");
+  }
 }

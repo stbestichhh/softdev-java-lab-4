@@ -7,4 +7,9 @@ public class PunctuationMark {
   public PunctuationMark(char mark) {
     this.mark = mark;
   }
+
+  @Override
+  public String toString() {
+    return String.valueOf(mark);
+  }
 }
