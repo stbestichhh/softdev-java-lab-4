@@ -7,6 +7,12 @@ import java.util.List;
 public class Text {
   public final List<Sentence> sentences;
 
+  /**
+   * Constructor
+   *
+   * @param text
+   * @return Text
+   */
   public Text(String text) {
     sentences = new ArrayList<>();
     String[] splitedSentences = text.split("(?<=[.!?])\\s+");
@@ -16,7 +22,10 @@ public class Text {
   }
 
   /**
-   * sorts all sentences' words by target letter occurrances in them
+   * Sorts all sentences' words by target letter occurrances in them
+   *
+   * @param targetLetter
+   * @return void
    */
   public void sortTextByLetterOccurrances(char targetLetter) {
     for (Sentence sentence : sentences) {

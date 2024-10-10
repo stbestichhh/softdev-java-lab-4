@@ -7,6 +7,11 @@ import java.util.List;
 public class Word {
   public final List<Letter> letters;
 
+  /**
+   * Constructor
+   * @param word
+   * @return Word
+   */
   public Word(String word) {
     letters = new ArrayList<Letter>();
 
@@ -15,6 +20,12 @@ public class Word {
     }
   }
 
+  /**
+   * Counts how many time target letter occurrs in the word
+   *
+   * @param targetLetter
+   * @return int count
+   */
   public int countLetterOccurrances(char targetLetter) {
     int count = 0;
     for (Letter letter : letters) {

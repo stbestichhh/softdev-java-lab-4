@@ -7,6 +7,12 @@ import java.util.ArrayList;
 public class Sentence {
   public final List<Object> components;
 
+  /**
+   * Constructor
+   *
+   * @param sentence
+   * @return Sentence
+   */
   public Sentence(String sentence) {
     components = new ArrayList<>();
     String[] wordsAndPunctuation = sentence.split("(?<=\\w)(?=\\p{Punct})|\\s+|(?<=\\p{Punct})(?=\\w)");
@@ -19,6 +25,12 @@ public class Sentence {
     }
   }
 
+  /**
+   * Sorts words in sentence by amount of targetLetter occurrances in a word
+   *
+   * @param targetLetter
+   * @return void;
+   */
   public void sortWordsByLetterUccurrances(char targetLetter) {
     components.sort((obj1, obj2) -> {
       if (obj1 instanceof Word && obj2 instanceof Word) {
