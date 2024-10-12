@@ -17,7 +17,7 @@ public class Text {
     String[] splitedSentences = text.split("(?<=[.!?])\\s+");
     sentences = new Sentence[splitedSentences.length];
     for (int i = 0; i < splitedSentences.length; i++) {
-      sentences[i] = new Sentence(sentence);
+      sentences[i] = new Sentence(splitedSentences[i]);
     }
   }
 
