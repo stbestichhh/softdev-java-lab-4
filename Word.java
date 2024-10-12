@@ -1,11 +1,10 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 
 /**
  * Represents word in a sentence
  */
 public class Word {
-  public final List<Letter> letters;
+  public final Letter[] letters;
 
   /**
    * Constructor
@@ -13,10 +12,10 @@ public class Word {
    * @return Word
    */
   public Word(String word) {
-    letters = new ArrayList<Letter>();
+    letters = new Letter[word.length()];
 
-    for (char c : word.toCharArray()) {
-      letters.add(new Letter(c));
+    for (int i = 0; i < word.length(); i++) {
+      letters[i] = new Letter(word.charAt(i));
     }
   }
 

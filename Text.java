@@ -5,7 +5,7 @@ import java.util.List;
  * Represents a text as a list of sentences
  */
 public class Text {
-  public final List<Sentence> sentences;
+  public final Sentence[] sentences;
 
   /**
    * Constructor
@@ -14,10 +14,10 @@ public class Text {
    * @return Text
    */
   public Text(String text) {
-    sentences = new ArrayList<>();
     String[] splitedSentences = text.split("(?<=[.!?])\\s+");
-    for (String sentence : splitedSentences) {
-      sentences.add(new Sentence(sentence));
+    sentences = new Sentence[splitedSentences.length];
+    for (int i = 0; i < splitedSentences.length; i++) {
+      sentences[i] = new Sentence(sentence);
     }
   }
 

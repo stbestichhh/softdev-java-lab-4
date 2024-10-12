@@ -1,11 +1,10 @@
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Represents a sentence in a text
  */
 public class Sentence {
-  public final List<Object> components;
+  public final Object[] components;
 
   /**
    * Constructor
@@ -14,13 +13,14 @@ public class Sentence {
    * @return Sentence
    */
   public Sentence(String sentence) {
-    components = new ArrayList<>();
     String[] wordsAndPunctuation = sentence.split("(?<=\\w)(?=\\p{Punct})|\\s+|(?<=\\p{Punct})(?=\\w)");
-    for (String part : wordsAndPunctuation) {
+    components = new Object[wordsAndPunctuation.length];
+    for (int i = 0; i < wordsAndPunctuation.length; i++) {
+      String part = wordsAndPunctuation[i];
       if (part.matches("\\p{Punct}")) {
-        components.add(new PunctuationMark(part.charAt(0)));
+        components[i] = new PunctuationMark(part.charAt(0));
       } else {
-        components.add(new Word(part));
+        components[i] = new Word(part);
       }
     }
   }
@@ -32,7 +32,7 @@ public class Sentence {
    * @return void;
    */
   public void sortWordsByLetterUccurrances(char targetLetter) {
-    components.sort((obj1, obj2) -> {
+    Arrays.sort(components, (obj1, obj2) -> {
       if (obj1 instanceof Word && obj2 instanceof Word) {
         Word word1 = (Word) obj1;
         Word word2 = (Word) obj2;

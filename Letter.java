@@ -2,7 +2,6 @@
  * Represents a letter in a word
  */
 public class Letter {
-
   public final char value;
 
   /**
