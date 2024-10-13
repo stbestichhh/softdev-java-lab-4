@@ -3,7 +3,7 @@ public class Lab4 {
   public static void main(String[] args) {
     try {
       if (args.length < 2) {
-        throw new IllegalArgumentException("Required arguments are missing.\nUsage: java Lab2 'text to sort' 'target letter' ");
+        throw new IllegalArgumentException("Required arguments are missing.\nUsage: java Lab4 'text to sort' 'target letter' ");
       }
 
       String textInput = args[0];
